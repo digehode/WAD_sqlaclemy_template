@@ -29,8 +29,11 @@ if __name__=="__main__":
 
     notes=session.query(models.Note).all()
 
+    print()
     for note in notes:
-        print(note.title)
-        print("-"*len(note.title))
+
+        title=f"{note.title} ({note.id})"
+        print(title)
+        print("-"*len(title))
         print(note.content)
         print()
