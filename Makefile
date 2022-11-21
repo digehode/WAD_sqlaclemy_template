@@ -5,7 +5,7 @@ LDB = demodb
 LDBPORT = 3333
 
 #Set up DB container names
-CONTAINERNAME = demo-db
+CONTAINERNAME = demodb
 
 #Admin port
 ADMIN_PORT=90
@@ -14,6 +14,9 @@ ADMIN_PORT=90
 CWD = $(shell pwd)
 DATADIR=data
 
+
+docs:
+	pdoc3 --force --html src/*.py -o docs
 
 start_db:
 	docker run  -p ${LDBPORT}:3306 --name ${CONTAINERNAME} -v ${CWD}/${DATADIR}:/var/lib/mysql -e MARIADB_ROOT_PASSWORD=${LDBPW} -e MARIADB_USER=${LDBUSER} -e MARIADB_PASSWORD=${LDBPW} -e MARIADB_ROOT_HOST=localhost -e MARIADB_DATABASE=${LDB} -d mariadb:latest
