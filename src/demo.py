@@ -2,7 +2,7 @@
 import db
 import models
 
-
+# Make these settings match your Makefile
 user="demodb"
 password="swordfish"
 dbname="demodb"
@@ -10,6 +10,9 @@ port="3333"
 
 if __name__=="__main__":
 
+    # This is all just demo code you can base your own demo code off it
+    # It also demonstrates how to initialise the DB, add items, query, etc
+    
     create_yn=input("Create DB? Enter Y to create, anything else to skip: ")
     if create_yn=="Y":
         db.create_db(user,password,port,dbname)

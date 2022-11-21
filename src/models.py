@@ -10,7 +10,7 @@ Base = declarative_base()
 
 
 
-# Our models
+# Our models. Remove the demo "Note" and add your own
 
 class Note(Base):
     __tablename__="notes"
